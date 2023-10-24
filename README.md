@@ -1,2 +1,2 @@
 # HostalCasadMancha
-Sitio Web de un hostal desarrollado en JavaScript utilizando React
+Sitio Web del Hostal Casa D' Mancha

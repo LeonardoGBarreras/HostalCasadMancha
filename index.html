@@ -17,6 +17,7 @@
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,700,400italic%7CPoppins:300,400,500,700">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}
      .logoinicial {
       font-family: 'Montserrat', sans-serif;
@@ -122,8 +123,6 @@
                       </li>
                       <li><a href="about-us.html">About Us</a>
                       </li>
-                      <li><a href="contacts.html">Contacts</a>
-                      </li>
                     </ul>
                   </div>
                 </div>
@@ -220,6 +219,7 @@
                           <option value="3">3</option>
                           <option value="4">4</option>
                           <option value="5">5</option>
+                          <option value="6">6</option>
                         </select>
                       </div>
                     </div>
@@ -238,7 +238,8 @@
                       </div>
                     </div>
                     <div class="cell-lg-12 cell-md-4">
-                      <button class="button button-primary button-square button-block button-effect-ujarak" type="submit"><span>Chequear Disponibilidad</span></button>
+                      <button class="button button-primary button-square button-block button-effect-ujarak" type="button" id="checkAvailabilityButton"><span>Consultar Disponibilidad</span></button></button> <br>
+                      <span>Este boton te llevará directamente a un Chat de WhatsApp con la anfitriona.<br> El mensaje contendrá los datos de Reserva que proporcionaste en el formulario </span>
                     </div>
                   </div>
                 </form>
@@ -246,6 +247,31 @@
             </div>
           </div>
         </div>
+        <script>
+          $(document).ready(function() {
+              $("#checkAvailabilityButton").on("click", function() {
+                  // Obtener los valores del formulario
+                  var nombre = $("#contact-first-name").val();
+                  var llegada = $("#date-in").val();
+                  var salida = $("#date-out").val();
+                  var adultos = $(".select-filter:eq(0)").val();
+                  var niños = $(".select-filter:eq(1)").val();
+          
+                  // Construir el enlace de WhatsApp con los datos del formulario
+                  var mensaje = "Hola,quisera hacer una reserva,mis datos son los siguientes:" + "%0A" +
+                                "Nombre: " + nombre + "%0A" +
+                                "Llegada: " + llegada + "%0A" +
+                                "Salida: " + salida + "%0A" +
+                                "Adultos: " + adultos + "%0A" +
+                                "Niños: " + niños;
+                  var numeroWhatsApp = "+5352442844";
+                  var enlaceWhatsApp = "https://api.whatsapp.com/send?phone=" + numeroWhatsApp + "&text=" + mensaje;
+          
+                  // Redirigir al usuario a WhatsApp
+                  window.location.href = enlaceWhatsApp;
+              });
+          });
+          </script>
       </section>
       <!-- About us-->
 

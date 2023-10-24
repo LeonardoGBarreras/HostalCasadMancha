@@ -4288,7 +4288,7 @@ dl {
 
 .quote-carousel-wrap #child-carousel .slick-slide figure:hover img,
 .quote-carousel-wrap #child-carousel .slick-center.slick-current figure img {
-	box-shadow: 0 0 0 8px #a387af;
+	box-shadow: 0 0 0 8px #ebbc94;
 }
 
 .quote-carousel-wrap figure {
@@ -4296,7 +4296,7 @@ dl {
 }
 
 .bg-secondary-3 .quote-carousel-wrap {
-	background-color: #323232;
+	background-image: url(/images/fondo\ quotes.jpg);
 }
 
 .bg-primary .quote-carousel-wrap {

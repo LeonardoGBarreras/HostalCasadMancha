@@ -31723,7 +31723,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 	}
 	@media (max-width: 768px) {
 		.swiper-slide {
-		  max-height: 60vh; /* Ajusta la altura según tus necesidades */
+		  max-height: 40vh; /* Ajusta la altura según tus necesidades */
 		}
 	  }
 }

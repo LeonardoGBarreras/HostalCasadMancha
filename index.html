@@ -212,7 +212,7 @@
                       <p class="text-uppercase">Adultos</p>
                       <div class="form-wrap form-wrap-validation">
                         <!--Select 2-->
-                        <select class="form-input select-filter" data-minimum-results-search="-1" data-placeholder="1" data-constraints="@Required">
+                        <select class="form-input select-filter" data-minimum-results-search="-1" data-placeholder="1" name="adults" data-constraints="@Required">
                           <option>&nbsp;</option>
                           <option value="1">1</option>
                           <option value="2">2</option>
@@ -227,7 +227,7 @@
                       <p class="text-uppercase">Niños</p>
                       <div class="form-wrap form-wrap-validation">
                         <!--Select 2-->
-                        <select class="form-input select-filter" data-minimum-results-search="-1" data-placeholder="0" data-constraints="@Required">
+                        <select class="form-input select-filter" data-minimum-results-search="-1" data-placeholder="0" name="children" data-constraints="@Required">
                           <option>&nbsp;</option>
                           <option value="1">0</option>
                           <option value="2">1</option>
@@ -249,13 +249,27 @@
         </div>
         <script>
           $(document).ready(function() {
+               var adultos = 1; // Valor predeterminado para adultos
+               var niños = 0; // Valor predeterminado para niños
+
+              // Evento para actualizar adultos si el usuario selecciona un valor
+               $("select[name='adults']").on("change", function() {
+               adultos = $(this).val();
+               });
+
+               // Evento para actualizar niños si el usuario selecciona un valor
+               $("select[name='children']").on("change", function() {
+               niños = $(this).val();
+               });
+
+          
+
               $("#checkAvailabilityButton").on("click", function() {
                   // Obtener los valores del formulario
                   var nombre = $("#contact-first-name").val();
                   var llegada = $("#date-in").val();
                   var salida = $("#date-out").val();
-                  var adultos = $(".select-filter:eq(0)").val();
-                  var niños = $(".select-filter:eq(1)").val();
+                 
           
                   // Construir el enlace de WhatsApp con los datos del formulario
                   var mensaje = "Hola,quisera hacer una reserva,mis datos son los siguientes:" + "%0A" +

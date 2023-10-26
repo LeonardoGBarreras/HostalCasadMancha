@@ -31721,4 +31721,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 		opacity: 1;
 		transform: translate(-100%, -60%);
 	}
+	@media (max-width: 768px) {
+		.swiper-slide {
+		  max-height: 60vh; /* Ajusta la altura según tus necesidades */
+		}
+	  }
 }
